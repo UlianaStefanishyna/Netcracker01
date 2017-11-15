@@ -19,14 +19,15 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-
+        analyzer();
     }
 
-    public void analyzer() {
+    public static void analyzer() {
         int arrayLength = 5_000;
         int stepForAnalyzing = 100;
         int[] arrayForSorting;
         int[] arrayForSortingClone;
+        double[] arrayForSortingTime = new double[(arrayLength / stepForAnalyzing) * 6];
 
         ArrayList<Sorting> list = new ArrayList<>();
 
@@ -35,15 +36,21 @@ public class Main {
         list.add(new AscendingBubbleSort());
         list.add(new CocktailSort());
         list.add(new MergeSort());
-        list.add(new QuickSort());
+        list.add(new QuickSort()); //TODO: time for QuickSort does not measured properly
 
-        for (int j = 0; j < arrayLength; j += stepForAnalyzing) {
-            arrayForSorting = new int[j];
+        //for (int j = 0, k = 0; j < arrayLength; j += stepForAnalyzing) { // [k] for arrayForSortingTime but need to think
+            arrayForSorting = new int[1000];
             Filling.fillingRandom(arrayForSorting);
             for (int i = 0; i < 6; i++) {
                 arrayForSortingClone = arrayForSorting.clone();
                 list.get(i).sort(arrayForSortingClone, false);
+
+                arrayForSortingTime[i] = list.get(i).timeToSort();
             }
-        }
+
+            for(int i = 0; i < 6; i++) {
+                System.out.println(arrayForSortingTime[i] + " ");
+            }
+        //}
     }
 }
