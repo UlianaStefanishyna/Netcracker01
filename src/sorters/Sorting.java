@@ -20,7 +20,7 @@ package sorters;
  * @version 1.0
  * @since 1.0
  */
-abstract class Sorting {
+public abstract class Sorting {
     public abstract double timeToSort();
     public abstract String toString();
     public abstract void sort(int[] array, boolean doPrintSortedArray);
@@ -30,8 +30,8 @@ abstract class Sorting {
     public void printArray(int[] array){
         if(array.length > 20)
             return;
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+        for (int anArray : array) {
+            System.out.print(anArray + " ");
         }
         System.out.println();
     }
