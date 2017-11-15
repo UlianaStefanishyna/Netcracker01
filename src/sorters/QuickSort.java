@@ -57,7 +57,7 @@ public class QuickSort extends SortingSwap {
 
     @Override
     public double timeToSort() {
-        return (startTimer-endTimer)/Math.pow(10,9);
+        return (endTimer-startTimer)/Math.pow(10,9);
     }
 
     @Override
