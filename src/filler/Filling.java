@@ -15,8 +15,8 @@
  * It uses for filling by sorted values in reverse order
  *
  * @author Uliana Stefanishyna
+ * created on 2017/10/25
  * @version 1.0
- * @date 25.10.2017
  * @since 1.0
  */
 
