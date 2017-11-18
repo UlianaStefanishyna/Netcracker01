@@ -32,7 +32,7 @@ public class Main {
         ArrayList<Sorting> list = new ArrayList<>();
 
         list.add(new DefaultSorting());
-        list.add(new DescendingBubbleSort());
+        list.add(new DescendingBubbleSort()); //Works in descending order
         list.add(new AscendingBubbleSort());
         list.add(new CocktailSort());
         list.add(new MergeSort());
